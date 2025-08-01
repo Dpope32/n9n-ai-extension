@@ -1,0 +1,1 @@
+import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react'\nimport { crx } from '@crxjs/vite-plugin'\nimport manifest from './manifest.json'\n\nexport default defineConfig({\n  plugins: [\n    react(),\n    crx({ manifest })\n  ],\n  build: {\n    rollupOptions: {\n      input: {\n        popup: 'src/popup/popup.html'\n      }\n    }\n  }\n})
